@@ -1,0 +1,19 @@
+<div padding class="logindiv">
+	
+	<img src="./images/Logo.png" class="logo">
+
+	<h2 class="textcenter">Connectez-vous à <br> votre espace</h2>
+
+	<form [ngFormModel]="loginForm">
+		
+		<ion-input #login ngControl="login" type="text" placeholder="Login"	[class.invalid]="!loginForm.controls.login.valid && (loginChanged || submitAttempt)" (change)="elementChanged(login)"></ion-input>
+		
+		<ion-input #motdepasse ngControl="motdepasse" type="password" placeholder="Mot de passe" [class.invalid]="!loginForm.controls.motdepasse.valid && (motdepasseChanged || submitAttempt)"	(change)="elementChanged(motdepasse)"></ion-input>
+
+		<button block (click)="logintoapp()" margin-top>
+			<ion-icon name="log-in"></ion-icon>Connexion
+		</button>
+
+	</form>	
+
+</div>
